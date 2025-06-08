@@ -4,6 +4,8 @@ from db import get_connect
 import psycopg2.extras
 
 def add_item():
+    """adds item to the db"""
+
     name = input("Enter the item name: ")
     price = float(input("Enter price: "))
     category = input("Enter category of the item: ")
@@ -30,6 +32,8 @@ def add_item():
 
 
 def add_note():
+    """from unique id, adds note to that item"""
+
     item_id = input("Enter the id: ")
     note = input("Enter note: ")
 
@@ -50,6 +54,8 @@ def add_note():
 
 
 def view_report():
+    """lets user see the report of their whole spent"""
+
     name = input("Search by name: ").strip()
     category = input("Filter by category(optional): ")
 
@@ -94,6 +100,8 @@ def view_report():
     conn.close()
 
 def view_notes():
+    """lets user to see the notes that they added earlier"""
+
     item_id = input("Enter item ID: ")
 
     conn = get_connect()
